@@ -1,4 +1,4 @@
-# Blur Detection
+# Blur Detection w optional img SUB-DIRECTORY move
 Blur Detection works using the total variance of the laplacian of an
 image, this provides a quick and accurate method for scoring how blurry
 an image is.
@@ -51,3 +51,16 @@ The saved json file has information on how blurry an image is, the higher the va
 This is based upon the blogpost [Blur Detection With Opencv](https://www.pyimagesearch.com/2015/09/07/blur-detection-with-opencv/) by Adrian Rosebrock.
 
 ![Blur Mask Demo](https://raw.githubusercontent.com/WillBrennan/BlurDetection2/master/docs/demo.png)
+
+*NEW* To enable moving blurry images, add the --move-blurry flag:
+
+```bash
+python process.py -i s:\test --save-path results_moved.json --move-blurry
+```
+
+If you want to specify a different subdirectory name than "blurry_images":
+
+```bash
+python process.py -i s:\test --save-path results_moved.json --move-blurry --blurry-subdir "needs_review"
+```
+
